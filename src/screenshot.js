@@ -27,8 +27,8 @@ const srcToImg = require('./hleper/srcToimg')
         return Array.prototype.map.call(image, img => img.src)
       })
       console.log(`get ${ srcs.length } imagess, start download`)
-      srcs.forEach(src => {
-        srcToImg(src, mn)
+      srcs.forEach(async src => {
+       await srcToImg(src, mn)
       });
       await browser.close();
     })
