@@ -46,7 +46,6 @@ const base64ToImg = async function (base64Str, dir) {
       ext = matches[0].split('/')[1]
       .replace('jpeg', 'jpg')
     }
-
       // console.log(ext)
     const file = path.join(dir, `${Date.now()}.${ext}`)
     await writeFile(file, matches[2], 'base64');
